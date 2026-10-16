@@ -17,6 +17,8 @@ const LINKS: { label: string; href: string; icon: ReactNode }[] = [
   },
 ]
 
+const YEAR = new Date().getFullYear()
+
 export function Footer() {
   return (
     <footer className="mt-auto bg-ink text-paper">
@@ -46,7 +48,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <p className="text-[14px] text-paper/70">Carlos Andrés Borja · {new Date().getFullYear()}</p>
+          <p className="text-[14px] text-paper/70">Carlos Andrés Borja · {YEAR}</p>
         </div>
       </div>
     </footer>

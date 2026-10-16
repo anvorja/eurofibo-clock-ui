@@ -1,0 +1,34 @@
+name: CI
+
+# CI on every PR to main/develop. The rulesets require the job name below as a status check,
+# so nothing that fails types, lint or build reaches main, and Netlify (which deploys main)
+# never publishes it. netlify.toml repeats lint + build as a second guard on Netlify itself.
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    # The job name is the status check the rulesets require: keep them in sync.
+    name: Calidad y build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Análisis de tipos (tsc)
+        run: pnpm typecheck
+      - name: Lint (oxlint, las advertencias también fallan)
+        run: pnpm lint
+      - name: Build
+        run: pnpm build
