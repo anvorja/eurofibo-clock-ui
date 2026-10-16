@@ -1,0 +1,10 @@
+# Netlify solo publica si lint y build pasan: si cualquiera falla, el despliegue se cancela.
+# Producción = rama main (se configura en Netlify). main está protegida: solo entra código
+# que ya pasó el CI de GitHub (ver .github/rulesets).
+[build]
+  command = "pnpm lint && pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  # La URL del API (Render) se define en Netlify como VITE_API_BASE; nunca se escribe aquí.
