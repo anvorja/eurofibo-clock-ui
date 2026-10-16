@@ -1,6 +1,6 @@
 # EuroFibo Clock UI
 
-Interfaz web del servicio [`eurofibo-clock`](../eurofibo-clock) (Scala 3 · http4s). TypeScript, pnpm, Vite, React, Tailwind CSS v4, TanStack Query y Motion. El diseño se inspira en scale.com (sin reutilizar su marca ni sus assets).
+Interfaz web del servicio [`eurofibo-clock`](../eurofibo-clock) (Scala 3 · http4s). TypeScript, pnpm, Vite, React, Tailwind CSS v4, TanStack Query y Motion.
 
 ## Ejecutar
 
