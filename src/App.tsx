@@ -4,9 +4,10 @@ import { Footer } from '@/components/Footer'
 import { Topbar, type ViewId } from '@/components/Topbar'
 import { CapitalsView } from '@/views/CapitalsView'
 import { FibonacciView } from '@/views/FibonacciView'
+import { GuideView } from '@/views/GuideView'
 import { Strategies } from '@/views/Strategies'
 
-const IDS: ViewId[] = ['estrategias', 'fibonacci', 'capitales']
+const IDS: ViewId[] = ['estrategias', 'fibonacci', 'capitales', 'guia']
 const fromHash = (): ViewId => {
   const h = window.location.hash.slice(1) as ViewId
   return IDS.includes(h) ? h : 'estrategias'
@@ -31,6 +32,7 @@ export default function App() {
         {view === 'estrategias' && <Strategies />}
         {view === 'fibonacci' && <FibonacciView />}
         {view === 'capitales' && <CapitalsView />}
+        {view === 'guia' && <GuideView />}
       </main>
       <Footer />
       </div>
