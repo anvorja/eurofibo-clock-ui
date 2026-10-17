@@ -48,7 +48,8 @@ export function Strategies() {
           Una capital, elegida por el reloj
         </h1>
         <p className="mt-6 max-w-[44ch] text-[18px] leading-[1.55] text-soft">
-          Fibonacci y la hora de Colombia deciden un destino europeo. Elige la estrategia, un índice <span className="font-mono text-ink">n</span> y lee cada paso del cálculo.
+          Fibonacci y la hora de Colombia deciden un destino europeo. Elige la estrategia, un índice <span className="font-mono text-ink">n</span> y lee cada paso del cálculo.{' '}
+          <a href="#guia" className="text-ink underline underline-offset-4 hover:no-underline">¿Cómo se lee?</a>
         </p>
 
         <form

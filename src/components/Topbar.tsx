@@ -2,12 +2,13 @@ import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib/api'
 import { cn } from '@/lib/cn'
 
-export type ViewId = 'estrategias' | 'fibonacci' | 'capitales'
+export type ViewId = 'estrategias' | 'fibonacci' | 'capitales' | 'guia'
 
 const NAV: { id: ViewId; label: string }[] = [
   { id: 'estrategias', label: 'Estrategias' },
   { id: 'fibonacci', label: 'Fibonacci' },
   { id: 'capitales', label: 'Capitales' },
+  { id: 'guia', label: 'Guía' },
 ]
 
 /** La hora de Bogotá viene del servidor cada segundo; si falla, el estado del API se ve desde cualquier vista. */
